@@ -1,8 +1,9 @@
-import { BasePrerequisite, Prerequisite, PrerequisiteContext, PrerequisiteContext } from '@discord-architect/core'
+import { BasePrerequisite, Prerequisite, PrerequisiteContext } from '@discord-architect/core'
 
 @Prerequisite({ name: '' })
-export default class $className implements BaseRequire {
+export default class $className implements BasePrerequisite {
 	public async isValid(context: PrerequisiteContext): Promise<boolean> {
 		// Your code here
+        return true
 	}
 }

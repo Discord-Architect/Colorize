@@ -14,10 +14,10 @@ export default class Dispatcher {
 			'make:command': () => this.preload('Command'),
 			'make:event': () => this.preload('Event'),
 			'make:middleware': () => this.preload('Middleware'),
-			'make:require': () => this.preload('Prerequisite'),
-			unknown: () => {}
+			'make:require': () => this.preload('Prerequisite')
 		}
-		command[this.commandName || 'unknown']()
+
+		;(command[this.commandName] || (() => Logger.sendCustom('error', "This command doesn't exist.")))()
 	}
 
 	private preload(templateFile: string): void {
