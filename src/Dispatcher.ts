@@ -11,36 +11,19 @@ export default class Dispatcher {
 
 	public dispatch(): void {
 		const command: any = {
-			'make:command': () => this.makeCommand(),
-			'make:event': () => this.makeEvent(),
-			'make:middleware': () => this.makeMiddleware(),
+			'make:command': () => this.preload('Command'),
+			'make:event': () => this.preload('Event'),
+			'make:middleware': () => this.preload('Middleware'),
+			'make:require': () => this.preload('Prerequisite'),
 			unknown: () => {}
 		}
 		command[this.commandName || 'unknown']()
 	}
 
-	private makeCommand(): void {
+	private preload(templateFile: string): void {
 		if (this.args[0] == undefined) return
 
-		const templateDir: string = path.join(__dirname, '..', 'Template', 'Command')
-		const targetDir: string = path.join(process.cwd(), env.SRC_DIR)
-
-		this.makeFile(templateDir, targetDir, this.args)
-	}
-
-	private makeEvent(): void {
-		if (this.args[0] == undefined) return
-
-		const templateDir: string = path.join(__dirname, '..', 'Template', 'Event')
-		const targetDir: string = path.join(process.cwd(), env.SRC_DIR)
-
-		this.makeFile(templateDir, targetDir, this.args)
-	}
-
-	private makeMiddleware(): void {
-		if (this.args[0] == undefined) return
-
-		const templateDir: string = path.join(__dirname, '..', 'Template', 'Middleware')
+		const templateDir: string = path.join(__dirname, '..', 'Template', templateFile)
 		const targetDir: string = path.join(process.cwd(), env.SRC_DIR)
 
 		this.makeFile(templateDir, targetDir, this.args)
