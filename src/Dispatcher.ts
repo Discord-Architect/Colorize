@@ -14,7 +14,7 @@ export default class Dispatcher {
 			'make:command': () => this.preload('Command'),
 			'make:event': () => this.preload('Event'),
 			'make:middleware': () => this.preload('Middleware'),
-			'make:require': () => this.preload('Prerequisite')
+			'make:prerequisite': () => this.preload('Prerequisite')
 		}
 
 		;(command[this.commandName] || (() => Logger.sendCustom('error', "This command doesn't exist.")))()
@@ -24,7 +24,7 @@ export default class Dispatcher {
 		if (this.args[0] == undefined) return
 
 		const templateDir: string = path.join(__dirname, '..', 'Template', templateFile)
-		const targetDir: string = path.join(process.cwd(), env.SRC_DIR)
+		const targetDir: string = path.join(process.cwd(), env.SRC_DIR || 'src')
 
 		this.makeFile(templateDir, targetDir, this.args)
 	}
