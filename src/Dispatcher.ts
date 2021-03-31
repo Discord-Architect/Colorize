@@ -21,7 +21,7 @@ export default class Dispatcher {
 	}
 
 	private preload(templateFile: string): void {
-		if (this.args[0] == undefined) return
+		if (!this.args[0]) return
 
 		const templateDir: string = path.join(__dirname, '..', 'Template', templateFile)
 		const targetDir: string = path.join(process.cwd(), env.SRC_DIR || 'src')
