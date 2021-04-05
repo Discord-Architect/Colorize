@@ -110,27 +110,36 @@ export default class MakeFile<K extends keyof ClientEvents> extends Command {
     const event = (await this.choiceEvent())!.event
     const filename = (await this.choiceFilename())!.filename
 
-    await this.makeFile('Event', filename, { event })
+    if (event && filename) {
+      await this.makeFile('Event', filename, { event })
+    }
   }
 
   private async initializeCommand (): Promise<void> {
     const filename = (await this.choiceFilename())!.filename
 
-    await this.makeFile('Command', filename)
+    if (filename) {
+      await this.makeFile('Command', filename)
+    }
+
   }
 
   private async initializeMiddleware (): Promise<void> {
     const middleware = (await this.choiceMiddleware())!.middleware
     const filename = (await this.choiceFilename())!.filename
 
-    await this.makeFile('Middleware', filename, { middleware })
+    if (middleware && filename) {
+      await this.makeFile('Middleware', filename, { middleware })
+    }
   }
 
   private async initializePrerequisite (): Promise<void> {
     const prerequisite = (await this.choicePrerequisite())!.prerequisite
     const filename = (await this.choiceFilename())!.filename
 
-    await this.makeFile('Prerequisite', filename, { prerequisite })
+    if (prerequisite && filename) {
+      await this.makeFile('Prerequisite', filename, { prerequisite })
+    }
   }
 
   private async makeFile (type: string, targetLocation: string, fileOptions?: { event?: K, middleware?: string, prerequisite?: string }): Promise<void> {
