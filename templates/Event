@@ -1,6 +1,6 @@
 import { Event, BaseEvent } from '@discord-architect/core'
 
-@Event('ready')
+@Event('$event')
 export default class $className implements BaseEvent {
 	public async run(args: any): Promise<void> {
 		// Please go to the documentation in order to know the parameters you can use
