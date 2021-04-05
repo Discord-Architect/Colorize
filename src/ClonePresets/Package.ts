@@ -13,7 +13,6 @@ export default `
   "author": "$project_author",
   "license": "ISC",
   "dependencies": {
-    "@discord-architect/arch": "^1.1.6",
     "@discord-architect/core": "^1.3.6",
     "@discord-architect/env": "^1.0.1",
     "@discord-architect/hooks": "^1.0.0",
