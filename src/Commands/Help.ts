@@ -6,7 +6,7 @@ export default class Help extends Command {
     super('help');
   }
   public async run (): Promise<void> {
-    Logger.send('info', `Make choosing file : arch make:file\nMake new project : arch create-project`)
+    Logger.send('info', `Make choosing file : architect make:file\nMake new project : architect create-project`)
   }
 
 }
