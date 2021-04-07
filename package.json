@@ -1,28 +1,18 @@
 {
-	"name": "@discord-architect/arch",
-	"version": "1.2.3",
+	"name": "@discord-architect/colorize",
+	"version": "1.0.0",
 	"main": "build/index.js",
-	"repository": "git@github.com:Discord-Architect/Arch.git",
+	"repository": "git@github.com:Discord-Architect/Colorize.git",
 	"author": "Freeze455 <baptiste.parmantier.pro@gmail.com>",
 	"license": "MIT",
 	"scripts": {
 		"dev": "tsc -w",
 		"build": "tsc"
 	},
-	"bin": {
-		"architect": "build/index.js"
-	},
 	"dependencies": {
-		"@discord-architect/core": "^1.1.2",
-		"@discord-architect/env": "^1.0.1",
-		"@types/inquirer": "^7.3.1",
 		"@types/node": "^14.14.37",
-		"ava": "^3.15.0",
-		"chalk": "^4.1.0",
 		"cross-env": "^7.0.3",
 		"discord.js": "^12.5.1",
-		"dotenv": "^8.2.0",
-		"enquirer": "^2.3.6",
 		"ts-node": "^9.1.1",
 		"typescript": "^4.2.3"
 	}

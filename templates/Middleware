@@ -1,8 +1,0 @@
-import { Middleware, BaseMiddleware } from '@discord-architect/core'
-
-@Middleware('$middleware')
-export default class $className implements BaseMiddleware {
-	public async run(...args: any): Promise<void> {
-		// Your code here
-	}
-}
