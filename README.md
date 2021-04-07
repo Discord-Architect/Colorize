@@ -12,8 +12,9 @@ yarn add @discord-architect/colorize
 Import the module from `@discord-architect/colorize` as follows :
 ```typescript
 import { LightBlue } from '@discord-architect/colorize'
+import { MessageEmbed } from 'discord.js'
 
-const embed = new Discord.RichEmbed({
+const embed = new MessageEmbed({
   title: 'Hello world',
   color: LightBlue.LIGHT_BLUE_400
 })
