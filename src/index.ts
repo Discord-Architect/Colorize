@@ -10,7 +10,7 @@ import Orange from './Colors/Orange'
 import Yellow from './Colors/Yellow'
 import Pink from './Colors/Pink'
 import Red from './Colors/Red'
-
+import Special from './Colors/Special'
 
 export {
   Gray,
@@ -25,4 +25,5 @@ export {
   Yellow,
   Pink,
   Red,
+  Special
 }

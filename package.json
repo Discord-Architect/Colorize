@@ -1,6 +1,6 @@
 {
 	"name": "@discord-architect/colorize",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"main": "build/index.js",
 	"repository": "git@github.com:Discord-Architect/Colorize.git",
 	"author": "Freeze455 <baptiste.parmantier.pro@gmail.com>",
